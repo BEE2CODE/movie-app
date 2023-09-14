@@ -3,44 +3,46 @@ import './App.css'
 import MoviesCard from './MoviesCard'
 
 function App() {
-  const API_URL ='https://api.themoviedb.org/3/movie/top_rated?api_key=d91a8bff2f8fff82a0c47ec660d5bb9f'
-  const API_SEARCH ='https://api.themoviedb.org/3/movie/343611?api_key=d91a8bff2f8fff82a0c47ec660d5bb9f'
+  const API_KEY = 'd91a8bff2f8fff82a0c47ec660d5bb9f'
+  const API_DOMAIN = 'https://api.themoviedb.org/3/'
+
+  const API_TOP_RATED = `${API_DOMAIN}movie/top_rated?api_key=${API_KEY}`
+
+  const API_SEARCH = `${API_DOMAIN}search/movie?api_key=${API_KEY}`
 
   const [movies, setMovies] = useState([])
-  const [term, setTerm]= useState("")
+  const [term, setTerm] = useState('')
 
   useEffect(() => {
-    fetch(API_URL)
+    fetch(API_TOP_RATED)
       .then((res) => res.json())
       .then((data) => setMovies(data.results))
-  }, [])
+  }, [API_TOP_RATED])
 
-  console.log(movies)
-
-  const handleSearch = (e) =>{
+  const handleSearch = (e) => {
     e.preventDefault()
 
-    fetch(API_SEARCH + term)
-    .then(res => res.json())
-    .then(data => setMovies(data.results))
+    fetch(`${API_SEARCH}&query=${term}`)
+      .then((res) => res.json())
+      .then((data) => setMovies(data.results))
   }
 
   return (
     <div className="App">
       <div className="search_nav">
-        <div>
-          <h1>Movies</h1>
+        <div className='logo'>
+          <img src='/Logo.png' alt='Logo' />
         </div>
-        <div>
-          <form onSubmit={handleSearch}>
-            <input onChange={(e) => setTerm(e.target.value)}/>
+        <div className='search_box'>
+          <form onSubmit={handleSearch} >
+            <input onChange={(e) => setTerm(e.target.value)} />
             <button>Search</button>
           </form>
         </div>
       </div>
 
       <div className="movies">
-        {movies.map((movies) => (
+        {movies?.map((movies) => (
           <MoviesCard {...movies} />
         ))}
       </div>

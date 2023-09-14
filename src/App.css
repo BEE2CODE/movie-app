@@ -1,8 +1,57 @@
 *{
   margin: 0;
   padding: 0;
+  font-family: sans-serif;
 }
+.App{
+  padding: 1.5rem;
+  background-color: rgb(54, 103, 50);
+}
+
 .movies{
   display: flex;
   flex-wrap: wrap;
+
 }
+.search_nav{
+  display: flex;
+  align-items: center;
+}
+.logo{
+  padding-right: 3rem;
+}
+
+.search_box form input{
+  border: 0;
+  outline: 0;
+  border-radius: 1rem;
+  margin-right: 0.5rem;
+  margin-left: 20rem;
+  padding: 0.5rem;
+  width: 30rem;
+ 
+
+}
+
+.search_box button{
+  border: 0;
+  outline: 0;
+  background-color: rgb(190, 236, 186);
+  padding: 8px 22px;
+  border-radius: 1rem;
+  cursor: pointer;
+ 
+}
+.search_box button:hover{
+  background-color: rgb(146, 202, 141);
+  transition: 0.3s ease-in-out;
+}
+
+
+@media screen and (max-width: 400px) {
+  .App {
+    background-color: pink;
+    
+  }
+}
+

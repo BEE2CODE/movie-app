@@ -1,9 +1,60 @@
 .Card{
+    max-height: 30rem;
     width: 15rem;
-    margin-left: 1.5rem;
+    margin: 1.5rem;
     margin-bottom: 1.5rem;
+    background-color: rgb(190, 236, 186);
+    overflow: hidden;
+    position: relative;
+    border-radius: 15px;
+    box-shadow: rgb(0px, 5px, 10px, 0px);
 }
-
 .Poster img{
-    width: 15rem;
+  max-width: 15rem;
+  max-height: 26rem;
+  
+    
+}
+.info{
+    display: block;
+    justify-content: space-between;
+    margin: 0.5rem;
+    
+}
+.strong_title{
+    font-weight: bolder;
+}
+.IMDB{
+    background-color: #EAB308;
+    padding: 8px ;
+    font-weight: bolder;
+    border-radius: 5px;
+    margin-top: 12px; 
+    font-family: Arial, Helvetica, sans-serif;
+}
+.container{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.overview{
+    transform: translateY(100%);
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 1rem;
+    overflow: auto;
+    margin-top: 4rem;
+    font-size: 12px;
+    border-radius: 10px;
+    transition: 0.3s ease-in-out;
+    
+
+}
+.Card:hover .overview{
+    transform: translateY(0%);
+    background-color: rgb(190, 236, 186);
+    
 }
