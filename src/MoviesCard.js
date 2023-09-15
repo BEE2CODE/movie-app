@@ -6,7 +6,7 @@ const MoviesCard = (props) => {
   return (
     <div className='Card' >
         <div className='Poster'>
-            <img src={props.poster_path ? API_IMG + props.poster_path : "https://images.unsplash.com/photo-1518676590629-3dcbd9c5a5c9?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTh8fGNpbmVtYXxlbnwwfHwwfHx8MA%3D%3D&auto=format&fit=crop&w=600&q=60"} />
+            <img data-testid="movie-poster" src={props.poster_path ? API_IMG + props.poster_path : "https://images.unsplash.com/photo-1518676590629-3dcbd9c5a5c9?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTh8fGNpbmVtYXxlbnwwfHwwfHx8MA%3D%3D&auto=format&fit=crop&w=600&q=60"} />
         </div>
 
         <div className='info'>
